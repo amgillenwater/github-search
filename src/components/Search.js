@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import UserList from './UserList'
 
 const Search = () => {
   const [userObject, setUserObject] = useState([])
@@ -17,16 +18,21 @@ const Search = () => {
   }
 
   return (
-    <section className='search'>
-      <form onSubmit={handleSearch}>
-        <input
-          type='text'
-          placeholder='Search by username'
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </form>
-    </section>
+    <>
+      <section className='search'>
+        <form onSubmit={handleSearch}>
+          <input
+            type='text'
+            placeholder='Search by username'
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </form>
+      </section>
+      <section>
+        <UserList users={userObject.items} />
+      </section>
+    </>
   )
 }
 

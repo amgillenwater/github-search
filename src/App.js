@@ -2,6 +2,7 @@ import React from 'react'
 import logo from './logo.svg'
 import './App.css'
 import Search from './components/Search'
+import UserList from './components/UserList'
 
 function App () {
   return (
