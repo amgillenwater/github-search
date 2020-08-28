@@ -1,14 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import UserCard from './UserCard'
+import Row from 'react-bootstrap/Row'
 
 const UserList = ({ users }) => {
   return (
-    <div>
+    <Row>
       {!users
         ? (
-          <h1>No results found</h1>
+          <></>
         )
-        : (<div>
+        : (<Row>
           {users.map((item, idx) => {
             return (
               <UserCard
@@ -19,8 +20,8 @@ const UserList = ({ users }) => {
             )
           }
           )}
-        </div>)}
-    </div>
+        </Row>)}
+    </Row>
   )
 }
 

@@ -1,8 +1,6 @@
 import React from 'react'
-import logo from './logo.svg'
 import './App.css'
 import Search from './components/Search'
-import UserList from './components/UserList'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -18,7 +16,11 @@ function App () {
       </Jumbotron>
       <Container>
         <Row>
-          <Search />
+          <Col />
+          <Col lg>
+            <Search />
+          </Col>
+          <Col />
         </Row>
       </Container>
     </section>
