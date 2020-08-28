@@ -19,7 +19,7 @@ const UserList = ({ users }) => {
             )
           }
           )}
-           </div>)}
+        </div>)}
     </div>
   )
 }

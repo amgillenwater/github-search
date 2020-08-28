@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import UserList from './UserList'
+import Col from 'react-bootstrap/Col'
+import InputGroup from 'react-bootstrap/InputGroup'
+import { Form, FormControl } from 'react-bootstrap'
 
 const Search = () => {
   const [userObject, setUserObject] = useState([])
@@ -19,19 +22,24 @@ const Search = () => {
 
   return (
     <>
-      <section className='search'>
-        <form onSubmit={handleSearch}>
-          <input
-            type='text'
-            placeholder='Search by username'
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </form>
-      </section>
-      <section>
+      <Col s={2}>
+        <InputGroup className='mb-3'>
+          <InputGroup.Prepend>
+            <InputGroup.Text id='basic-addon1'>@</InputGroup.Text>
+          </InputGroup.Prepend>
+          <Form onSubmit={handleSearch}>
+            <FormControl
+              placeholder='username'
+              aria-label='username'
+              aria-describedby='basic-addon1'
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </Form>
+        </InputGroup>
         <UserList users={userObject.items} />
-      </section>
+
+      </Col>
     </>
   )
 }
